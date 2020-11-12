@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript RockPaperScissors</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+      //computer selection logic
+      function computerPlay() {
+          let randomNumber = Math.floor(Math.random() * 30);
+          if (randomNumber <= 10) {
+              return "rock" 
+          } 
+          else if (randomNumber <= 20) {
+              return "paper"
+          }
+          else {
+              return "scissors"
+          }
+
+        }
+    // declaring global variables for keeping score
+    let computerScore = 0
+    let playerScore = 0
+
+    //Game round logic
+      
+      function playRound (playerSelection, computerSelection) {
+          computerSelection = computerPlay();
+          playerSelection = playerSelection.toLowerCase();
+          if (playerSelection == "rock" && computerSelection == "scissors") {
+              playerScore = playerScore + 1 
+              return "You Win! Rock beats Scissors."
+          }
+          else if (playerSelection == "paper" && computerSelection == "rock") {
+              playerScore = playerScore + 1
+              return "You Win! Paper beats Rock."
+          }
+          else if (playerSelection == "scissors" && computerSelection == "paper") {
+              playerScore = playerScore + 1 
+              return "You Win! Scissors beat Paper."
+          }
+          else if (playerSelection == "rock" && computerSelection == "paper") {
+              computerScore = computerScore + 1
+              return "You Loose! Paper beats Rock."
+          }
+          else if (playerSelection == "scissors" && computerSelection == "rock") {
+              computerScore = computerScore + 1
+              return "You Loose! Rock beats Scissors."
+          }
+          else if (playerSelection == "paper" && computerSelection == "scissors") {
+              computerScore = computerScore + 1
+              return "You Loose! Scissors beats Paper."
+          }
+          else if (playerSelection == computerSelection) {
+              return "It's a tie!" 
+          }
+          else {
+              return "Error"
+          }
+      }
+      // Playing 5 rounds and returing the result
+      function game() {
+
+          let gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
+          console.log(gameResult);
+          gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
+          console.log(gameResult);
+          gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
+          console.log(gameResult);
+          gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
+          console.log(gameResult);
+          gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
+          console.log(gameResult);
+        if (computerScore === playerScore) {
+             computerScore = 0
+             playerScore = 0
+            return "It's a tie!"
+        }
+        else if (computerScore > playerScore) {
+             computerScore = 0
+             playerScore = 0
+            return "You lost!"
+        }
+        else {
+             computerScore = 0
+             playerScore = 0
+            return "You won!"
+        }
+
+          
+      }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+ 
