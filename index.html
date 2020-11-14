@@ -62,17 +62,11 @@
       }
       // Playing 5 rounds and returing the result
       function game() {
-
-          let gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
-          console.log(gameResult);
-          gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
-          console.log(gameResult);
-          gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
-          console.log(gameResult);
-          gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
-          console.log(gameResult);
-          gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
-          console.log(gameResult);
+        
+        for (let i = 0; i <= 4; i++) {
+            let gameResult =  playRound(window.prompt("Rock, Paper, Scissors"));
+            console.log(gameResult);
+        }
         if (computerScore === playerScore) {
              computerScore = 0
              playerScore = 0
